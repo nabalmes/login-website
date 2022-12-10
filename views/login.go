@@ -18,8 +18,8 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 	activeSession := GetActiveSession(r)
 
-	if activeSession != "" {
-		http.Redirect(w, r, "/balmes/landingpage", http.StatusSeeOther)
+	if activeSession != nil {
+		http.Redirect(w, r, "/index", http.StatusSeeOther)
 	}
 
 	if r.Method == "POST" {
@@ -41,7 +41,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 			http.SetCookie(w, &http.Cookie{
 				Path:  "/",
-				Name:  "Session",
+				Name:  "session",
 				Value: newSession,
 			})
 
@@ -51,7 +51,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				Value: user.Username,
 			})
 
-			http.Redirect(w, r, "/practice/test", http.StatusSeeOther)
+			http.Redirect(w, r, "/index", http.StatusSeeOther)
 		}
 	}
 
@@ -59,12 +59,12 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, data)
 }
 
-func GetActiveSession(r *http.Request) string {
+func GetActiveSession(r *http.Request) *http.Cookie {
 	key, err := r.Cookie("session")
 	if err == nil && key != nil {
-		return key.Value
+		return key
 	}
-	return ""
+	return nil
 }
 
 func hashPassword(pass string) string {

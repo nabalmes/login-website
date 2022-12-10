@@ -15,10 +15,12 @@
     font-family: var(--main-font);
 }
 
-body {
-    background: url(../images/bg.jpg);
+body { 
+    background: url("https://media.istockphoto.com/id/1349280027/photo/background-black-and-green-dark-are-light-with-the-gradient-is-the-surface-with-templates.jpg?b=1&s=170667a&w=0&k=20&c=J8dcCslR9FI3-RJcbBXKd0FI2GBfgQ9TBf4wZSty8AA=");
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 
@@ -46,6 +48,8 @@ body {
 
     transform: translateY(-200%);
     transition: 500ms transform ease-in-out;
+    
+    z-index: 2;
 }
 
 #register-modal.active {
@@ -54,7 +58,11 @@ body {
 }
 
 .login-form__container {
+    width: 100%;
+    max-width: 400px;
+
     display: flex;
+    gap: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -62,4 +70,55 @@ body {
     background: #0080008a;
     backdrop-filter: blur(5px);
     border-radius: 10px;
+}
+
+.input-wrapper {
+    width: 100%;
+
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-wrapper input{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    boder: transparent;
+    border: transparent;
+    background: #efe2e280;
+    outline: none;
+    padding: 0 10px;
+}
+
+.input-wrapper label {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1;
+    letter-spacing: 2px;
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.buttons-container #registerUser {
+    background: rgba(128, 128, 128, 0.678);
+    color: #fff;
+}
+
+.login-btns {
+    width: 100%;
+    max-width: 130px;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 20px;
+
+    cursor: pointer;
 }

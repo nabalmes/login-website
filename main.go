@@ -32,6 +32,8 @@ func RegisterHandlers() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
 
 	http.HandleFunc("/", views.LoginHandler)
+	http.HandleFunc("/logout", views.LogOutHandler)
+	http.HandleFunc("/index", views.IndexHandler)
 	http.HandleFunc("/api/", api.APIHandler)
 
 }

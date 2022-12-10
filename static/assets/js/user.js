@@ -1,6 +1,4 @@
 let addUser = () => {
-    let registerBtn = document.getElementById("modalRegisterUser")
-    
         $.ajax({
             url: "/api/add_user",
             data: {
@@ -10,7 +8,16 @@ let addUser = () => {
                 "lastname": $("#user-lname").val(),
             },
             success: function() {
-                $("#register-modal").removeClass("active")
+                $("#register-modal").empty()
+                $("#register-modal").append(`
+                    <h2>Registered Successfully</h2>
+                    <button onclick="closeRegModal()">Close</button>    
+                `)
+              
             }
         })
+}
+
+let closeRegModal = () => {
+    $("#register-modal").removeClass("active")
 }

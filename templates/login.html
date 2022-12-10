@@ -14,21 +14,21 @@
 <body>
     <div id="register-modal">
         <div class="register-modal__wrapper">
-            <div class="fname-wrapper">
+            <div class="input-wrapper fname-wrapper">
                 <label for="firstname">First Name</label>
                 <input id="user-fname" type="text" name="firstname">
             </div>
 
-            <div class="lname-wrapper">
+            <div class="input-wrapper lname-wrapper">
                 <label for="lastname">Last Name</label>
                 <input id="user-lname" type="text" name="lastname">
             </div>
 
-            <div class="username-wrapper">
+            <div class="input-wrapper username-wrapper">
                 <label for="username">Username</label>
                 <input id="user-username" type="text">
             </div>
-            <div class="password-wrapper">
+            <div class="input-wrapper password-wrapper">
                 <label for="password">Password</label>
                 <input id="user-password" type="password">
             </div>
@@ -37,19 +37,21 @@
         </div>     
     </div>
     <section class="login-section">
-        <form method="post" autocomplete="off">
-            <div class="login-form__container">
-                <div class="username-wrapper">
+        <form class="login-form__container" method="post" autocomplete="off">
+           
+                <div class="input-wrapper username-wrapper">
                     <label for="username">Username</label>
                     <input type="text" name="username">
                 </div>
-                <div class="password-wrapper">
+                <div class="input-wrapper password-wrapper">
                     <label for="password">Password</label>
                     <input type="password" name="password">
                 </div>
-                <div id="registerUser">Register</div>
-                <button id="loginUser">Log in</button>
-            </div>
+                <div class="buttons-container">              
+                    <button class="login-btns"  id="loginUser">Log in</button>
+                    <div class="login-btns" id="registerUser">Register</div>
+                </div>
+        
         </form>
 
     </section>
