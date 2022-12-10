@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --main-font: 'Montserrat', sans-serif
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    font-family: var(--main-font);
+}
+
+body {
+    background: url(../images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+.login-section {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(231, 229, 229, 0.411);
+    backdrop-filter: blur(5px);
+
+    transform: translateY(-200%);
+    transition: 500ms transform ease-in-out;
+}
+
+#register-modal.active {
+    transform: translateY(0);
+    transition: 500ms transform ease-in-out;
+}
+
+.login-form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: #0080008a;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}

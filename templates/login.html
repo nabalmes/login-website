@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>{{.Title}}</title>
+
+    <link rel="stylesheet" href="../static/assets/css/main.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="register-modal">
+        <div class="register-modal__wrapper">
+            <div class="fname-wrapper">
+                <label for="firstname">First Name</label>
+                <input id="user-fname" type="text" name="firstname">
+            </div>
+
+            <div class="lname-wrapper">
+                <label for="lastname">Last Name</label>
+                <input id="user-lname" type="text" name="lastname">
+            </div>
+
+            <div class="username-wrapper">
+                <label for="username">Username</label>
+                <input id="user-username" type="text">
+            </div>
+            <div class="password-wrapper">
+                <label for="password">Password</label>
+                <input id="user-password" type="password">
+            </div>
+            <button id="modalRegisterUser" class="login-btn" onclick="addUser()">Register</button>
+            <button id="closeModal" class="login-btn">Back</button>
+        </div>     
+    </div>
+    <section class="login-section">
+        <form method="post" autocomplete="off">
+            <div class="login-form__container">
+                <div class="username-wrapper">
+                    <label for="username">Username</label>
+                    <input type="text" name="username">
+                </div>
+                <div class="password-wrapper">
+                    <label for="password">Password</label>
+                    <input type="password" name="password">
+                </div>
+                <div id="registerUser">Register</div>
+                <button id="loginUser">Log in</button>
+            </div>
+        </form>
+
+    </section>
+</body>
+<script src="../static/assets/js/jquery.3.1.6.min.js"></script>
+<script src="../static/assets/js/user.js"></script>
+<script>
+    const openRegisterBtn = document.getElementById("registerUser");
+    let registerModal = document.getElementById("register-modal")
+    let closeModal = document.getElementById("closeModal")
+
+    openRegisterBtn.addEventListener("click", () => {
+        registerModal.classList.add("active");
+    })
+
+    closeModal.addEventListener("click", ()  => {
+        registerModal.classList.remove("active");
+    })
+
+</script>
+</html>
